@@ -10,7 +10,7 @@ next, create docker image (image size is ~3GB).
 docker build -t <name>/<image-name> .
 ```
 
-and run docker container on port forwarding by internal port 8080 toward exposing external port you like.
+and run docker container on port forwarding by exposing internal port 8080 toward external port you like.
 
 ```bash
 docker container run -p 8080:8080 <name>/<image-name>
