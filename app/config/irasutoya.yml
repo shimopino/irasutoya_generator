@@ -1,0 +1,42 @@
+CONFIG_NAME: 'stageII'
+
+SEED: 2019
+CUDA: True
+
+OUTPUT_DIR: '../output'
+DATASET_NAME: 'irasutoya'
+METADATA_PATH: '../data/train.json'
+EMBEDDING_PATH: '../data/bert-base-sentence-embeddings'
+
+STAGE1_G: '../output/Model/netG_epoch_1000.pth'
+NET_G: ''
+# NET_D: '../output/Model/netD_epoch_last.pth'
+NET_D: ''
+
+VIS_COUNT: 64
+
+GPU_ID: '0'
+Z_DIM: 100
+DATA_DIR: ''
+WORKERS: 4
+IMSIZE: 256
+STAGE: 2
+TRAIN:
+    FLAG: 1
+    BATCH_SIZE: 16
+    MAX_EPOCH: 200
+    LR_DECAY_EPOCH: 20
+    SNAPSHOT_INTERVAL: 5
+    DISCRIMINATOR_LR: 0.0004
+    GENERATOR_LR: 0.0002
+    COEFF:
+      KL: 1.0
+
+GAN:
+    CONDITION_DIM: 128
+    DF_DIM: 96
+    GF_DIM: 192
+    R_NUM: 2
+
+TEXT:
+    DIMENSION: 768
